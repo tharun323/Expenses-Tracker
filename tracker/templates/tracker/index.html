@@ -1,0 +1,46 @@
+{% load mathfilters %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<form method="POST" action=" " enctype="multipart/form-data" >
+<h2>Add Item</h2>
+{% csrf_token %}
+{{form.as_p}}
+<input type="submit" value="Add"/>
+</form>
+<hr>
+
+ <form action="{% url 'tracker:sname'%}">
+    <input type="submit" value="Sortby name" />
+</form>
+
+<form action="{% url 'tracker:sprice'%}">
+    <input type="submit" value="Sortby price" />
+</form>
+
+<form action="{% url 'tracker:sdate'%}">
+    <input type="submit" value="Sortby date/time" />
+</form>
+
+
+
+
+
+{% for i in item %}
+{{i.name}} is of cost {{i.price}}
+<img src="{{i.image.url}}" width="50px" height="50px;">
+<br>
+<form action="{% url 'tracker:delete' i.id%}">
+<input type="submit" value="Delete Task" />
+<br>
+</form>
+{% endfor %}
+<h1>{{sum}}</h1>
+
+
+</body>
+</html>
