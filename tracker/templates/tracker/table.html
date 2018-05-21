@@ -1,10 +1,45 @@
+{% load static %}
+<link rel="stylesheet" type="text/css" href="{% static 'tracker/style.css' %}" />
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>$Title$</title>
+    <title>Title</title>
 </head>
 <body>
-$END$
+
+<table>
+    <th>Sno</th>
+    <th>Name</th>
+    <th>Price</th>
+    <th>Created at</th>
+    <th>Image</th>
+
+    {% for i in items %}
+    <tr>
+        <td>{{forloop.counter}}</td>
+        <td>{{i.name}}</td>
+        <td>{{i.price}}</td>
+        <td>{{i.created_at}}</td>
+        <td><img src="{{i.image.url}}" width="100px" height="100px"/>
+        <br>
+    <form action="{% url 'tracker:delete' i.id%}">
+    <input type="submit" value="Delete Task" />
+    <br>
+    </form>
+    <form action="{% url 'tracker:update' i.id%}">
+    <input type="submit" value="Edit" />
+    </form></td>
+
+    </tr>
+
+    {% endfor %}
+</table>
+<p>The total sum is {{sum}}</p>
+
+<form action="{% url 'tracker:items'%}">
+    <input type="submit" value="Add more" />
+</form>
+
 </body>
 </html>

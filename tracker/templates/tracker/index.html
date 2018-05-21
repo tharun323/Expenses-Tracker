@@ -1,23 +1,33 @@
-{% load mathfilters %}
+{% load static %}
+<link rel="stylesheet" type="text/css" href="{% static 'tracker/style.css' %}" />
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
-    <style>
-        form
-    {
-    display:inline;
-    padding-right:20px;
-    }
-    </style>
+
 </head>
 <body>
+<h1>Welcome to Expenses tracker</h1>
+
+{% if user.is_authenticated %}
+<h2>{{user.username}}</h2> <p>welcome yo !!</p>
+<p>click here to logout</p>
+<a href="{% url 'logout' %}">Logout</a>
+{% else %}
+<h2>you are not logedin </h2>
+{% endif %}
 <form method="POST" action=" " enctype="multipart/form-data" >
 <h2>Add Item</h2>
 {% csrf_token %}
 {{form.as_p}}
 <input type="submit" value="Add"/>
+</form>
+
+<form action="{% url 'tracker:display'%}">
+    <input type="submit" value="Display" />
 </form>
 <hr>
 
@@ -32,30 +42,6 @@
 <form action="{% url 'tracker:sdate'%}">
     <input type="submit" value="Sortby date/time" />
 </form>
-
-
-<br><br>
-
-
-{% for i in item %}
-{{i.name}} is of cost {{i.price}}
-
-{% if i.image %}
-<img src="{{i.image.url}}" height="200px" width="200px"/>
-{% endif %}
-
-
-<br>
-<form action="{% url 'tracker:delete' i.id%}">
-<input type="submit" value="Delete Task" />
-<br>
-</form>
-<form action="{% url 'tracker:update' i.id%}">
-    <input type="submit" value="Edit" />
-</form>
-<br><br><br><br>
-{% endfor %}
-<h1>{{sum}}</h1>
 
 
 </body>

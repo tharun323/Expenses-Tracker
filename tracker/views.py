@@ -10,7 +10,28 @@ from . models import Item
 
 from django.db.models import Sum
 
+from django.contrib.auth import authenticate,login
+
+from .forms import SignUpForm
+
 import re,json
+
+
+
+def signup(request):
+    if request.method == 'POST':
+        form = SignUpForm(request.POST)
+        if form.is_valid():
+            form.save()
+            username = form.cleaned_data.get('username')
+            raw_password = form.cleaned_data.get('password1')
+            user = authenticate(username=username, password=raw_password)
+            login(request, user)
+            return HttpResponseRedirect('/item')
+    else:
+        form = SignUpForm()
+    return render(request, 'registration/signup.html', {'form': form})
+
 
 def add_item(request):
     k=Item.objects.aggregate(Sum('price'))
@@ -47,7 +68,12 @@ def update(request,id):
     return render(request,"tracker/update.html",context)
 
 
-
+def display(request):
+    k = Item.objects.aggregate(Sum('price'))
+    l = json.dumps(k)
+    p = re.findall("\d+", l)
+    item = Item.objects.all()
+    return render(request,"tracker/table.html",{'items':item ,'sum':p})
 
 
 def delete(request,id):

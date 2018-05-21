@@ -5,14 +5,35 @@
     <title>Sort by Date</title>
 </head>
 <body>
+{% load static %}
+<link rel="stylesheet" type="text/css" href="{% static 'tracker/style.css' %}" />
+<table>
+    <th>Sno</th>
+    <th>Name</th>
+    <th>Price</th>
+    <th>Created at</th>
+    <th>Image</th>
 
-{% for i in date %}
+    {% for i in date %}
+    <tr>
+        <td>{{forloop.counter}}</td>
+        <td>{{i.name}}</td>
+        <td>{{i.price}}</td>
+        <td>{{i.created_at}}</td>
+        <td><img src="{{i.image.url}}" width="100px" height="100px"/>
+        <br>
+    <form action="{% url 'tracker:delete' i.id%}">
+    <input type="submit" value="Delete Task" />
+    <br>
+    </form>
+    <form action="{% url 'tracker:update' i.id%}">
+    <input type="submit" value="Edit" />
+    </form></td>
 
-<h3> {{i.name}} is created at {{i.created_at}} </h3>
-<br><br>
+    </tr>
 
-{% endfor %}
-
+    {% endfor %}
+</table>
 
 </body>
 </html>
