@@ -32,6 +32,23 @@ def add_item(request):
     return render(request, "tracker/index.html", {'form': form ,'item':item,'sum':p })
 
 
+def update(request,id):
+    instance=get_object_or_404(Item,id=id)
+    form=ItemModelForm(data=request.POST, files=request.FILES, instance=instance)
+    if form.is_valid():
+        instance=form.save(commit=False)
+        instance.save()
+    context={
+        "name":instance.name,
+        "price":instance.price,
+        "instance":instance,
+        "form":form,
+    }
+    return render(request,"tracker/update.html",context)
+
+
+
+
 
 def delete(request,id):
     deleteitem=get_object_or_404(Item,pk=id).delete()

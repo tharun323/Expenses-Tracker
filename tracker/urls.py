@@ -5,8 +5,9 @@ urlpatterns=[
     path('item',views.add_item,name="items"),
     path('<int:id>/', views.delete, name='delete'),
     path('sortname',views.sortbyname,name="sname"),
-path('sortprice',views.sortbyprice,name="sprice"),
-path('sortdate',views.sortbydate,name="sdate"),
+    path('sortprice',views.sortbyprice,name="sprice"),
+    path('sortdate',views.sortbydate,name="sdate"),
+    path('<int:id>/edit',views.update,name="update"),
 ]
 
 

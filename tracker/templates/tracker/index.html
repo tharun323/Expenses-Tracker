@@ -4,6 +4,13 @@
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
+    <style>
+        form
+    {
+    display:inline;
+    padding-right:20px;
+    }
+    </style>
 </head>
 <body>
 <form method="POST" action=" " enctype="multipart/form-data" >
@@ -27,17 +34,26 @@
 </form>
 
 
-
+<br><br>
 
 
 {% for i in item %}
 {{i.name}} is of cost {{i.price}}
-<img src="{{i.image.url}}" width="50px" height="50px;">
+
+{% if i.image %}
+<img src="{{i.image.url}}" height="200px" width="200px"/>
+{% endif %}
+
+
 <br>
 <form action="{% url 'tracker:delete' i.id%}">
 <input type="submit" value="Delete Task" />
 <br>
 </form>
+<form action="{% url 'tracker:update' i.id%}">
+    <input type="submit" value="Edit" />
+</form>
+<br><br><br><br>
 {% endfor %}
 <h1>{{sum}}</h1>
 
