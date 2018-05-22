@@ -7,21 +7,22 @@
     <title>Title</title>
 </head>
 <body>
-
 <table>
     <th>Sno</th>
     <th>Name</th>
     <th>Price</th>
     <th>Created at</th>
     <th>Image</th>
-
     {% for i in items %}
     <tr>
         <td>{{forloop.counter}}</td>
         <td>{{i.name}}</td>
         <td>{{i.price}}</td>
         <td>{{i.created_at}}</td>
-        <td><img src="{{i.image.url}}" width="100px" height="100px"/>
+        <td>
+            {% if i.image %}
+            <img src="{{i.image.url}}" width="100px" height="100px"/>
+            {%endif%}
         <br>
     <form action="{% url 'tracker:delete' i.id%}">
     <input type="submit" value="Delete Task" />
@@ -30,16 +31,21 @@
     <form action="{% url 'tracker:update' i.id%}">
     <input type="submit" value="Edit" />
     </form></td>
-
     </tr>
-
     {% endfor %}
 </table>
 <p>The total sum is {{sum}}</p>
-
 <form action="{% url 'tracker:items'%}">
-    <input type="submit" value="Add more" />
+    <button type="submit" class="button button1" >Add Items</button>
 </form>
-
+<form action="{% url 'tracker:sprice'%}">
+    <button class="button button5">Sort by price</button>
+</form>
+ <form action="{% url 'tracker:sname'%}">
+    <button class="button button5">Sort by name</button>
+</form>
+ <form action="{% url 'tracker:sdate'%}">
+     <button class="button button5">Sort by Date</button>
+ </form>
 </body>
 </html>

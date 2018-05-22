@@ -1,14 +1,20 @@
+{% load static %}
+<link rel="stylesheet" type="text/css" href="{% static 'tracker/style.css' %}" />
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <title>Signup</title>
-<h2>Already registered ? </h2>
-    <h3>Click here to login <a href="{% url 'login' %}"> Login </a> </h3>
+
 </head>
 <body>
- <h2>Sign up</h2>
+<div class="container-fluid" id="pagespace">
+    <center><p id="heading"><u>Expense Tracker</u></p></center>
+    Already registered ?
+    Click here to <a href="{% url 'login' %}"> Login </a>
+<div class="container" id="signup" >
   <form method="post" action="" enctype="multipart/form-data">
+      <h2><u>Sign up</u> to start using the App</h2>
     {% csrf_token %}
     {% for field in form %}
       <p>
@@ -22,7 +28,9 @@
         {% endfor %}
       </p>
     {% endfor %}
-    <button type="submit">Sign up</button>
+    <button class="button button1" type="submit">Signup</button>
   </form>
+</div>
+</div>
 </body>
 </html>

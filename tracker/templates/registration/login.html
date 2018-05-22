@@ -1,21 +1,35 @@
+{% load static %}
+<link rel="stylesheet" type="text/css" href="{% static 'tracker/style.css' %}" />
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <title>login</title>
+<style>
+body
+{
+background-color:#8BA3E7  ;
+padding-bottom:45px;
+}
+#lpage
+{
+align:center;
+padding-bottom:50px;
+background-color:white;
+}
+</style>
 </head>
 <body>
-
-
-
+ <div class="container" id="lpage">
+<center>
 <form action="{% url 'login' %}" enctype="multipart/form-data" method="POST">
 {% csrf_token %}
     <p>username: {{form.username}}</p>
     <p>password: {{form.password}}</p>
-
-    <input type="submit" value="login">
-
+    <button class="button button1" type="submit">Login</button>
 </form>
+</center>
+ </div>
 
 
 </body>

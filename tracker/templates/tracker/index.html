@@ -1,48 +1,44 @@
 {% load static %}
 <link rel="stylesheet" type="text/css" href="{% static 'tracker/style.css' %}" />
-
-
+<link href="https://fonts.googleapis.com/css?family=Philosopher" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Bitter" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Neuton" rel="stylesheet">
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
-
 </head>
 <body>
+<center>
 <h1>Welcome to Expenses tracker</h1>
-
 {% if user.is_authenticated %}
-<h2>{{user.username}}</h2> <p>welcome yo !!</p>
+    <h2>you have now been logged in <u>{{user.username}}</u> Welcome!!</h2>
 <p>click here to logout</p>
 <a href="{% url 'logout' %}">Logout</a>
 {% else %}
-<h2>you are not logedin </h2>
+<h2>you didn't log in </h2>
 {% endif %}
 <form method="POST" action=" " enctype="multipart/form-data" >
 <h2>Add Item</h2>
 {% csrf_token %}
 {{form.as_p}}
-<input type="submit" value="Add"/>
+<button class="button button1" type="submit">Add Item</button>
 </form>
-
 <form action="{% url 'tracker:display'%}">
-    <input type="submit" value="Display" />
+    <button class="button button2" type="submit">Display</button>
 </form>
 <hr>
-
+<h2>Filters</h2>
  <form action="{% url 'tracker:sname'%}">
-    <input type="submit" value="Sortby name" />
+    <button class="button button5">Sort by name</button>
 </form>
-
 <form action="{% url 'tracker:sprice'%}">
-    <input type="submit" value="Sortby price" />
+    <button class="button button5">Sort by price</button>
 </form>
-
 <form action="{% url 'tracker:sdate'%}">
-    <input type="submit" value="Sortby date/time" />
+    <button class="button button5">Sort by date</button>
 </form>
-
-
+</center>
 </body>
 </html>

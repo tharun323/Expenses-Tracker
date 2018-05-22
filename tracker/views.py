@@ -16,8 +16,6 @@ from .forms import SignUpForm
 
 import re,json
 
-
-
 def signup(request):
     if request.method == 'POST':
         form = SignUpForm(request.POST)
@@ -31,7 +29,6 @@ def signup(request):
     else:
         form = SignUpForm()
     return render(request, 'registration/signup.html', {'form': form})
-
 
 def add_item(request):
     k=Item.objects.aggregate(Sum('price'))
@@ -78,7 +75,7 @@ def display(request):
 
 def delete(request,id):
     deleteitem=get_object_or_404(Item,pk=id).delete()
-    return HttpResponseRedirect('/item')
+    return HttpResponseRedirect('/display')
 
 def sortbyname(request):
     sname=Item.objects.order_by('name').all()

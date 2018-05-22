@@ -1,3 +1,5 @@
+{% load static %}
+<link rel="stylesheet" type="text/css" href="{% static 'tracker/style.css' %}" />
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -5,14 +7,24 @@
     <title>Update</title>
 </head>
 <body>
-
-<form method="POST" action="" enctype="multipart/form-data" >
-<h2>Update Item</h2>
+<div class="container" id="signup" >
+<form method="POST" action="{% url 'tracker:display' %}" enctype="multipart/form-data" >
+    <h2>Update Item</h2>
 {% csrf_token %}
-{{form.as_p}}
-<input type="submit" value="Add"/>
+    {% for field in form %}
+      <p>
+        {{ field.label_tag }}<br>
+        {{ field }}
+        {% if field.help_text %}
+          <small style="color: grey">{{ field.help_text }}</small>
+        {% endif %}
+        {% for error in field.errors %}
+          <p style="color: red">{{ error }}</p>
+        {% endfor %}
+      </p>
+    {% endfor %}
+    <button class="button button1" type="submit">Update</button>
 </form>
-
-
+</div>
 </body>
 </html>
