@@ -1,25 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="aea13f20-908d-4a31-887d-075d96311e4a" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/tracker/.coverage" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/tracker/admin.py" afterPath="$PROJECT_DIR$/tracker/admin.py" />
-      <change beforePath="$PROJECT_DIR$/tracker/forms.py" afterPath="$PROJECT_DIR$/tracker/forms.py" />
-      <change beforePath="$PROJECT_DIR$/tracker/models.py" afterPath="$PROJECT_DIR$/tracker/models.py" />
-      <change beforePath="$PROJECT_DIR$/tracker/static/tracker/style.css" afterPath="$PROJECT_DIR$/tracker/static/tracker/style.css" />
-      <change beforePath="$PROJECT_DIR$/tracker/templates/registration/login.html" afterPath="$PROJECT_DIR$/tracker/templates/registration/login.html" />
-      <change beforePath="$PROJECT_DIR$/tracker/templates/registration/signup.html" afterPath="$PROJECT_DIR$/tracker/templates/registration/signup.html" />
-      <change beforePath="$PROJECT_DIR$/tracker/templates/tracker/index.html" afterPath="$PROJECT_DIR$/tracker/templates/tracker/index.html" />
-      <change beforePath="$PROJECT_DIR$/tracker/templates/tracker/sdate.html" afterPath="$PROJECT_DIR$/tracker/templates/tracker/sdate.html" />
-      <change beforePath="$PROJECT_DIR$/tracker/templates/tracker/sname.html" afterPath="$PROJECT_DIR$/tracker/templates/tracker/sname.html" />
-      <change beforePath="$PROJECT_DIR$/tracker/templates/tracker/sprice.html" afterPath="$PROJECT_DIR$/tracker/templates/tracker/sprice.html" />
-      <change beforePath="$PROJECT_DIR$/tracker/templates/tracker/table.html" afterPath="$PROJECT_DIR$/tracker/templates/tracker/table.html" />
-      <change beforePath="$PROJECT_DIR$/tracker/templates/tracker/update.html" afterPath="$PROJECT_DIR$/tracker/templates/tracker/update.html" />
-      <change beforePath="$PROJECT_DIR$/tracker/tests.py" afterPath="$PROJECT_DIR$/tracker/tests.py" />
-      <change beforePath="$PROJECT_DIR$/tracker/urls.py" afterPath="$PROJECT_DIR$/tracker/urls.py" />
-      <change beforePath="$PROJECT_DIR$/tracker/views.py" afterPath="$PROJECT_DIR$/tracker/views.py" />
-    </list>
+    <list default="true" id="aea13f20-908d-4a31-887d-075d96311e4a" name="Default" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -117,6 +99,25 @@
             <path>
               <item name="website" type="b2602c69:ProjectViewProjectNode" />
               <item name="website" type="462c0819:PsiDirectoryNode" />
+              <item name="tracker" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="website" type="b2602c69:ProjectViewProjectNode" />
+              <item name="website" type="462c0819:PsiDirectoryNode" />
+              <item name="tracker" type="462c0819:PsiDirectoryNode" />
+              <item name="migrations" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="website" type="b2602c69:ProjectViewProjectNode" />
+              <item name="website" type="462c0819:PsiDirectoryNode" />
+              <item name="tracker" type="462c0819:PsiDirectoryNode" />
+              <item name="static" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="website" type="b2602c69:ProjectViewProjectNode" />
+              <item name="website" type="462c0819:PsiDirectoryNode" />
+              <item name="tracker" type="462c0819:PsiDirectoryNode" />
+              <item name="static" type="462c0819:PsiDirectoryNode" />
               <item name="tracker" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
