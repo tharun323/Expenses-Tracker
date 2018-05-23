@@ -10,13 +10,3 @@ class Item(models.Model):
     def __str__(self):
         return self.name
 
-    def was_published_now(self):
-        now=timezone.now()
-        return now-datetime.timedelta(days=1)<=self.created_at<=now
-
-    def test_for_price(self):
-        return self.price
-
-
-
-

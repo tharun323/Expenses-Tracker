@@ -3,71 +3,45 @@ from tracker.models import Item
 from django.utils import timezone
 from tracker.forms import *
 import datetime
-
+from django.test import Client
+from django.shortcuts import render,redirect,reverse
 class ItemViewTests(TestCase):
 
     def test_signup(self):
         response = self.client.get("http://127.0.0.1:8000/signup/")
         self.assertEqual(response.status_code, 200)
 
-    def test_item(self):
-        response = self.client.get("http://127.0.0.1:8000/signup/")
-        self.assertEqual(response.status_code, 200)
-
     def test_display(self):
-        response = self.client.get("http://127.0.0.1:8000/signup/")
+        response = self.client.get("http://127.0.0.1:8000/display/")
         self.assertEqual(response.status_code, 200)
 
     def test_sortname(self):
-        response = self.client.get("http://127.0.0.1:8000/sortname/?")
+        response = self.client.get("http://127.0.0.1:8000/sortname/")
         self.assertEqual(response.status_code, 200)
 
     def test_sortprice(self):
-        response = self.client.get("http://127.0.0.1:8000/sortprice/?")
+        response = self.client.get("http://127.0.0.1:8000/sortprice/")
         self.assertEqual(response.status_code, 200)
 
     def test_sdate(self):
-        response = self.client.get("http://127.0.0.1:8000/sortdate/?")
+        response = self.client.get("http://127.0.0.1:8000/sortdate/")
         self.assertEqual(response.status_code, 200)
-
 
     def test_login(self):
-        response = self.client.get("http://127.0.0.1:8000/accounts/login")
-        self.assertEqual(response.status_code, 301)
+        p=Client()
+        response = p.post('http://127.0.0.1:8000/accounts/login/',{'username': "tharunreddy", 'password': "Tharun@django"})
+        self.assertNotEquals(response.status_code, 302)
 
     def test_logout(self):
-        response = self.client.get("http://127.0.0.1:8000/accounts/logout")
-        self.assertEqual(response.status_code, 301)
-
-    def test_update(self):
-        response = self.client.get("http://127.0.0.1:8000/<int:id>/edit/")
-        self.assertEqual(response.status_code, 404)
-
-    def test_delete(self):
-        response = self.client.get("http://127.0.0.1:8000/<int:id>/")
-        self.assertEqual(response.status_code, 200)
-
+        p=Client()
+        response = p.post('http://127.0.0.1:8000/accounts/logout/')
+        response = c.get('/accounts/logout', follow=True)
+        self.assertEqual(response.status_code, 302)
 
 class ItemModelTest(TestCase):
 
     def create_item(self,name="television",price=1200):
         return Item.objects.create(name=name,price=price,created_at=timezone.now())
-
-    def test_item_creation(self):
-        w=self.create_item()
-        self.assertTrue(isinstance(w,Item))
-        self.assertEqual(w.__str__(),w.name)
-
-    def test_was_published_now(self):
-        time=timezone.now()+ datetime.timedelta(days=20)
-        future_item=Item(created_at=time)
-        self.assertIs(future_item.was_published_now(),False)
-
-    def test_price(self):
-        w=self.create_item()
-        self.assertTrue(isinstance(w,Item))
-        self.assertIs(w.test_for_price(),w.price)
-
 
 class UserFormTest(TestCase):
 

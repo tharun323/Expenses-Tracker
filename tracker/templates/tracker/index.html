@@ -8,19 +8,26 @@
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
+    <style>
+
+    </style>
 </head>
 <body>
+<div class="container-fluid" id="index">
 <center>
 <h1>Welcome to Expenses tracker</h1>
 {% if user.is_authenticated %}
-    <h2>you have now been logged in <u>{{user.username}}</u> Welcome!!</h2>
-<p>click here to logout</p>
-<a href="{% url 'logout' %}">Logout</a>
+    <h2>you have now been logged in as<h1><u>{{user.username}}</u></h1> <h2> Welcome!!</h2></h2>
+    <div style="position: absolute; top: 10px; right: 50px; text-align:right;">
+    <p><a href="{% url 'logout' %}">Logout</a></p>
+  </div>
 {% else %}
 <h2>you didn't log in </h2>
 {% endif %}
+
+<div class="container" id="login">
 <form method="POST" action=" " enctype="multipart/form-data" >
-<h2>Add Item</h2>
+<h1>Add Item</h1>
 {% csrf_token %}
 {{form.as_p}}
 <button class="button button1" type="submit">Add Item</button>
@@ -28,6 +35,8 @@
 <form action="{% url 'tracker:display'%}">
     <button class="button button2" type="submit">Display</button>
 </form>
+</div>
+
 <hr>
 <h2>Filters</h2>
  <form action="{% url 'tracker:sname'%}">
@@ -40,5 +49,6 @@
     <button class="button button5">Sort by date</button>
 </form>
 </center>
+</div>
 </body>
 </html>

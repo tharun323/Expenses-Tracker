@@ -7,11 +7,16 @@ background-color:#CBC6C4  ;
 font-family: 'Philosopher', sans-serif;
 font-size:65px;
 }
+#index
+{
+padding-top:10px;
+background-color:#A9DFDF;
+}
 #login
 {
 padding-top:50px;
 padding-bottom:50px;
-background-color:#E7A58B;
+background-color:#C6828D;
 }
 #signup
 {
