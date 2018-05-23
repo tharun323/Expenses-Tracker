@@ -5,14 +5,23 @@
 <head>
     <meta charset="UTF-8">
     <title>Signup</title>
-
+<style>
+    #pagespace
+{
+padding-top:20px;
+align:center;
+padding-bottom:50px;
+background-color:#C8E1C2;
+}
+</style>
 </head>
 <body>
 <div class="container-fluid" id="pagespace">
-    <center><p id="heading"><u>Expense Tracker</u></p></center>
+    <center><h1><u>Expense Tracker</u></h1></center>
     Already registered ?
-    Click here to <a href="{% url 'login' %}"> Login </a>
+        Click here to <a href="{% url 'login' %}"> Login </a>
 <div class="container" id="signup" >
+    <!-- login form --->
   <form method="post" action="" enctype="multipart/form-data">
       <h2><u>Sign up</u> to start using the App</h2>
     {% csrf_token %}
@@ -30,6 +39,7 @@
     {% endfor %}
     <button class="button button1" type="submit">Signup</button>
   </form>
+    <!-- end of form --->
 </div>
 </div>
 </body>

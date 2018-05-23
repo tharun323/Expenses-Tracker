@@ -15,6 +15,7 @@
 <body>
 <div class="container-fluid" id="index">
 <center>
+<!--  Authentication -->
 <h1>Welcome to Expenses tracker</h1>
 {% if user.is_authenticated %}
     <h2>you have now been logged in as<h1><u>{{user.username}}</u></h1> <h2> Welcome!!</h2></h2>
@@ -24,7 +25,11 @@
 {% else %}
 <h2>you didn't log in </h2>
 {% endif %}
+<!--   end of authentication -->
 
+
+<hr>
+<!--  Form for adding elements -->
 <div class="container" id="login">
 <form method="POST" action=" " enctype="multipart/form-data" >
 <h1>Add Item</h1>
@@ -36,7 +41,11 @@
     <button class="button button2" type="submit">Display</button>
 </form>
 </div>
+<!--  end of form -->
 
+
+
+<!--  All filters-------------------------- -->
 <hr>
 <h2>Filters</h2>
  <form action="{% url 'tracker:sname'%}">
@@ -49,6 +58,7 @@
     <button class="button button5">Sort by date</button>
 </form>
 </center>
+<!--  End of filter buttons------------------ -->
 </div>
 </body>
 </html>

@@ -7,6 +7,7 @@
 <title>Sort by price</title>
 </head>
 <body>
+<!-- table with elements in a loop --->
 <table>
     <th>Sno</th>
     <th>Name</th>
@@ -24,15 +25,16 @@
             {% endif %}
         <br>
     <form action="{% url 'tracker:delete' i.id%}">
-    <input type="submit" value="Delete Task" />
+    <input type="submit" value="Delete Task" id="delete{{forloop.counter}}"/>
     <br>
     </form>
     <form action="{% url 'tracker:update' i.id%}">
-    <input type="submit" value="Edit" />
+    <input type="submit" value="Edit" id="edit{{forloop.counter}}"/>
     </form></td>
     </tr>
     {% endfor %}
 </table>
+<!-- table with elements in a loop --->
 <br><br><br>
 <form action="{% url 'tracker:items'%}">
     <button class="button button5">Homepage</button>

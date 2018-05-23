@@ -51,7 +51,7 @@ def add_item(request):                      # Add all expenses items
 
 def update(request,id):                       # Editing submitted data
     instance=get_object_or_404(Item,id=id)
-    form=ItemModelForm(data=request.POST, files=request.FILES, instance=instance)
+    form=ItemModelForm(data=request.POST, files=request.FILES, instance=instance) #posted files will be in request.FILES
     if form.is_valid():
         instance=form.save(commit=False)
         instance.save()
@@ -64,7 +64,7 @@ def update(request,id):                       # Editing submitted data
     return render(request,"tracker/update.html",context)
 
 
-def display(request):
+def display(request):                                     #displaying all items
     k = Item.objects.aggregate(Sum('price'))
     l = json.dumps(k)
     p = re.findall("\d+", l)
@@ -72,19 +72,19 @@ def display(request):
     return render(request,"tracker/table.html",{'items':item ,'sum':p})
 
 
-def delete(request,id):
+def delete(request,id):                                    #deleting items by primary key on click
     deleteitem=get_object_or_404(Item,pk=id).delete()
     return HttpResponseRedirect('/display')
 
-def sortbyname(request):
+def sortbyname(request):                                   # sorting by name
     sname=Item.objects.order_by('name').all()
     return render(request,"tracker/sname.html",{'name':sname})
 
 
-def sortbyprice(request):
+def sortbyprice(request):                                  #sorting by price
     sprice=Item.objects.order_by('price').all()
     return render(request,"tracker/sprice.html",{'price':sprice})
 
-def sortbydate(request):
+def sortbydate(request):                                    #sorting by date
     sdate=Item.objects.order_by('created_at').all()
     return render(request,"tracker/sdate.html",{'date':sdate})

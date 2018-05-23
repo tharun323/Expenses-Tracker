@@ -11,6 +11,7 @@ font-size:65px;
 {
 padding-top:10px;
 background-color:#A9DFDF;
+padding-bottom:30px;
 }
 #login
 {
@@ -20,7 +21,7 @@ background-color:#C6828D;
 }
 #signup
 {
-background-color:#E7A58B;
+background-color:#97BCFC;
 padding-left:450px;
 padding-bottom:30px;
 padding-top:5px;

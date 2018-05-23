@@ -7,8 +7,10 @@
     <title>Update</title>
 </head>
 <body>
+
+<!-- Form for updating the items --->
 <div class="container" id="signup" >
-<form method="POST" action="{% url 'tracker:display' %}" enctype="multipart/form-data" >
+<form method="POST" action="" enctype="multipart/form-data" >
     <h2>Update Item</h2>
 {% csrf_token %}
     {% for field in form %}
@@ -18,12 +20,15 @@
         {% if field.help_text %}
           <small style="color: grey">{{ field.help_text }}</small>
         {% endif %}
-        {% for error in field.errors %}
-          <p style="color: red">{{ error }}</p>
-        {% endfor %}
+
       </p>
     {% endfor %}
     <button class="button button1" type="submit">Update</button>
+</form>
+    <!-- end of form --->
+
+ <form action="{% url 'tracker:display'%}">
+    <button class="button button2" type="submit">Display</button>
 </form>
 </div>
 </body>

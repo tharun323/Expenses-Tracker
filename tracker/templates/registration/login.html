@@ -13,6 +13,7 @@ padding-bottom:45px;
 }
 #lpage
 {
+padding-top:50px;
 align:center;
 padding-bottom:50px;
 background-color:white;
@@ -20,8 +21,14 @@ background-color:white;
 </style>
 </head>
 <body>
+<br><br><br><br>
  <div class="container" id="lpage">
+     <div style="position: absolute; top: 10px; right: 50px; text-align:right;">
+    <p><a href="{% url 'tracker:signup' %}"> Signup </a></p>
+  </div>
+     <!-- Login form --->
 <center>
+    <h1>Fill your credentials to Login</h1>
 <form action="{% url 'login' %}" enctype="multipart/form-data" method="POST">
 {% csrf_token %}
     <p>username: {{form.username}}</p>
@@ -29,6 +36,7 @@ background-color:white;
     <button class="button button1" type="submit">Login</button>
 </form>
 </center>
+     <!-- login form --->
  </div>
 
 
