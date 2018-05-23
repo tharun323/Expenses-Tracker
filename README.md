@@ -28,6 +28,13 @@
  using command promnt 'cd *path-to-repository*' , change directory to **Website**
 
  Enter `python manage.py runserver`
+ 
+ `python manage.py migrate`  ( to create database tables )
+ 
+ `python manage.py makemigrations` ( to save the changes )
+
+
+ 
 
  Open chrome and enter the URL `http://127.0.0.1:8000/signup`.
 
