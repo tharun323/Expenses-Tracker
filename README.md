@@ -13,23 +13,23 @@
 
 ### Installation 
 
-**install python 3.0**
+(this installation assumes that you have a github account )
+
+**install python 3.0** 
  
-**install Django 2.0**
+**install Django 2.0** (using 'pip install django~=2.0' )
 
 **install  Selenium using `pip install selenium`**
 
+ 
+ Open command prompt and move to your required location then,
 
  Download or Clone the repository by using `git clone https://github.com/tharun323/Expenses-Tracker.git` and clone to desktop. 
 
-
- Open command prompt and move to `path-to-repo/website/`
-
+ using command promnt 'cd *path-to-repository*' , change directory to **Website**
 
  Enter `python manage.py runserver`
 
-
  Open chrome and enter the URL `http://127.0.0.1:8000/signup`.
-
 
  Create an account and start using.
