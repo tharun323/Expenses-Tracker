@@ -24,7 +24,8 @@
  
  Open command prompt and move to your required location then,
 
- Download or Clone the repository by using `git clone https://github.com/tharun323/Expenses-Tracker.git` and clone to desktop. 
+ Download by clicking green button of rightside top portion or Clone the repository by using 
+ `git clone https://github.com/tharun323/Expenses-Tracker.git` and clone to desktop. 
 
  using command promnt 'cd *path-to-repository*' , change directory to **Website**
 
