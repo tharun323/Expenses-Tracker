@@ -19,8 +19,6 @@
  
 **install Django 2.0** (using 'pip install django~=2.0' )
 
-**install  Selenium using `pip install selenium`**
-
  
  Open command prompt and move to your required location then,
 
@@ -34,3 +32,23 @@
  Open chrome and enter the URL `http://127.0.0.1:8000/signup`.
 
  Create an account and start using.
+
+ ### Testing :
+ 
+ ( All the required settings for tests are made in website/settings.py )
+ 
+ (Download **Chromedriver** for python-testing , and copy its path in *EndToTndTest line no : 86 in tests.py* .
+ 
+ install Selenium using `pip install selenium`
+ 
+ install Django-nose using 'pip install django-nose'
+
+ install coverage using 'pip install coverage'
+ 
+ To Test the app , move to root directory of the project in command prompt and enter
+ 
+ #### python manage.py test tracker
+
+ 
+ 
+ 
