@@ -33,9 +33,6 @@
  
  `python manage.py makemigrations` ( to save the changes )
 
-
- 
-
  Open chrome and enter the URL `http://127.0.0.1:8000/signup`.
 
  Create an account and start using.
@@ -44,7 +41,7 @@
  
  ( All the required settings for tests are made in website/settings.py )
  
- (Download [ChromeDriver](https://sites.google.com/a/chromium.org/chromedriver/downloadsl) for python-testing in google chrome  , and    copy its path in *EndToTndTest line no : 86 in tests.py* .
+ (Download [ChromeDriver](https://sites.google.com/a/chromium.org/chromedriver/downloadsl) for python-testing in google chrome  , and    copy its absolute path in *EndToTndTest line no : 86 in tests.py* .( this testing assumes that the OP is using windows as the OS)
  
  install Selenium using `pip install selenium`
  
@@ -54,9 +51,9 @@
 
  move to  `.../tracker/tests.py` and under `def EndToEndTest():` edit the username ,password ,email as mentioned in the script
  
- To Test the app , move to root directory of the project and runserver using 'python manage.py runserver' then
+ To Test the app , move to root directory of the project and runserver using `python manage.py runserver` then
 
- open another command prompt , move to root directory and run 'python manage.py test tracker' to test the app.
+ open another command prompt , move to root directory and run `python manage.py test tracker` to test the app.
 
  
 
