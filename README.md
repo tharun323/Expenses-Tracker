@@ -53,8 +53,12 @@
  install coverage using 'pip install coverage'
  
  To Test the app , move to root directory of the project in command prompt and enter
+
+ Open an another command prompt and move to the Application root and run 'python manage.py runserver'.
+
+ and in current command prompt enter 
  
- #### python manage.py test tracker
+ #### python manage.py test tracker .
 
  
  
