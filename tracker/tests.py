@@ -77,7 +77,7 @@ class ItemModelFormTest(TestCase):  #testing Item form
         form = ItemModelForm(data=data)
         self.assertFalse(form.is_valid())
 
-
+#change the values of usename , password, email everytime you test here and in line no: 140 
 class EndtoEndTest(LiveServerTestCase): #End to End testing using Selenium
     username = "test"                   #sample name
     email = "test@gmail.com"            #email
