@@ -44,17 +44,20 @@
  
  ( All the required settings for tests are made in website/settings.py )
  
- (Download **Chromedriver** for python-testing , and copy its path in *EndToTndTest line no : 86 in tests.py* .
+ (Download [ChromeDriver](https://sites.google.com/a/chromium.org/chromedriver/downloadsl) for python-testing in google chrome  , and    copy its path in *EndToTndTest line no : 86 in tests.py* .
  
  install Selenium using `pip install selenium`
  
- install Django-nose using 'pip install django-nose'
+ install Django-nose using `pip install django-nose`
 
- install coverage using 'pip install coverage'
+ install coverage using `pip install coverage`
+
+ move to  `.../tracker/tests.py` and under `def EndToEndTest():` edit the username ,password ,email as mentioned in the script
  
- To Test the app , move to root directory of the project in command prompt and enter 'python manage.py runserver'
+ To Test the app , move to root directory of the project and runserver using 'python manage.py runserver' then
 
- open another command prompt , move to root directory and run 'python manage.py test tracker'
+ open another command prompt , move to root directory and run 'python manage.py test tracker' to test the app.
+
  
 
  
