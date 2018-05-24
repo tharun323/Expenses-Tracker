@@ -107,7 +107,7 @@ class EndtoEndTest(LiveServerTestCase): #End to End testing using Selenium
     elem.send_keys("television")
     elem = driver.find_element_by_id("id_price")
     elem.send_keys(1000)
-    driver.find_element_by_id("id_image").send_keys(os.getcwd() + "/speaker.jpg") #load image from root during testing
+    driver.find_element_by_id("id_image").send_keys(os.getcwd() + "/speaker.jpg") #give path to image from root during testing
     time.sleep(1)
     elem.send_keys(Keys.RETURN)
     time.sleep(2)
@@ -115,7 +115,7 @@ class EndtoEndTest(LiveServerTestCase): #End to End testing using Selenium
     elem.send_keys("television")
     elem = driver.find_element_by_id("id_price")
     elem.send_keys(1000)
-    driver.find_element_by_id("id_image").send_keys(os.getcwd() + "/speaker.jpg")
+    driver.find_element_by_id("id_image").send_keys(os.getcwd() + "/speaker.jpg") #give path to image from root during testing
     time.sleep(1)
     elem.send_keys(Keys.RETURN)
     time.sleep(2)
@@ -123,7 +123,7 @@ class EndtoEndTest(LiveServerTestCase): #End to End testing using Selenium
     elem.send_keys("television")
     elem = driver.find_element_by_id("id_price")
     elem.send_keys(1000)
-    driver.find_element_by_id("id_image").send_keys(os.getcwd() + "/speaker.jpg")
+    driver.find_element_by_id("id_image").send_keys(os.getcwd() + "/speaker.jpg") #give path to image from root during testing
     time.sleep(1)
     elem.send_keys(Keys.RETURN)
     time.sleep(2)
@@ -137,13 +137,13 @@ class EndtoEndTest(LiveServerTestCase): #End to End testing using Selenium
     link.click()
     link = driver.find_element_by_link_text('Login') #testing login page using creditials from Signup
     link.click()
-    elem = driver.find_element_by_id("id_username")
-    elem.send_keys("test")
+    elem = driver.find_element_by_id("id_username") 
+    elem.send_keys(username) 
     elem = driver.find_element_by_id("id_password")
-    elem.send_keys("simple1234")
+    elem.send_keys(password)
     time.sleep(1)
     elem.send_keys(Keys.RETURN)
-    driver.close()
+    driver.close() #Closes the Chrome browser
 
 
 
